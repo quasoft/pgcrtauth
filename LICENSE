@@ -1,3 +1,13 @@
+The source code in file crtauth/gotls.go is derived from
+https://golang.org/src/crypto/tls/generate_cert.go and copyrights for it
+are held by [The Go Authors, 2009] as part of the golang.org/pkg/crypto/tls
+package and are provided under the BSD 3-Clause License, which is fully
+included in the crtauth/gotls.go file.
+
+Copyrights for the rest of the pgcrtauth project are held by [QuaSoft, 2018].
+The rest of the pgcrtauth project is provided under the BSD 3-Clause License,
+included below:
+
 BSD 3-Clause License
 
 Copyright (c) 2018, QuaSoft
