@@ -10,11 +10,14 @@ The following two uses cases are currently supported:
 
 1. Generate a self-signed certificate for a single standalone PostgreSQL server:
       
-       pgcrtauth generate --hostnames "srv1.company.local,10.0.0.1" --organization "My Company" --common-name "srv1.company.local" --out-dir /certs/srv1/ --self-signed
+       pgcrtauth generate --hostnames "srv1.company.local,10.0.0.1" \
+           --organization "My Company" --common-name "srv1.company.local" \
+           --out-dir /certs/srv1/ --self-signed
 
    or the same command with shorthand flags:
 
-       pgcrtauth generate -H "srv1.domain.local,10.0.0.1" -O "My Company" -C "srv1.domain.local" -o /certs/srv1/ -s
+       pgcrtauth generate -H "srv1.domain.local,10.0.0.1" \
+           -O "My Company" -C "srv1.domain.local" -o /certs/srv1/ -s
 
 2. Create certificates for servers in a PostgreSQL cluster that are signed by a common certificate authority (CA):
 
@@ -24,7 +27,8 @@ The following two uses cases are currently supported:
 
    * Then generate a certificate signed by "ClusterCA" for each server in the cluster:
 
-          pgcrtauth generate -H "srv1.domain.local,10.0.0.1" -O "My Company" -C "srv1.domain.local" -o /certs/srv1/ --ca-dir /certs/ca/
+          pgcrtauth generate -H "srv1.domain.local" -O "My Company" -C "srv1.domain.local" \
+              -o /certs/srv1/ --ca-dir /certs/ca/
 
    * That's it. You can copy the `/certs/ca/root.crt`, `/certs/srv1/server.crt` and `/certs/srv1/server.key` files to the server data directory.
    
